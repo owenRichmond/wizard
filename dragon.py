@@ -7,29 +7,29 @@ class Dragon:
         self.def_pt = def_pt
         self.dodge_pt = dodge_pt
     def dragonAttak(self, lp_wizard):
-        print("Attaque de dragon")
+        print("Dragon's Attack")
         if random.randint(1,6) > 4:
-            print("Le magicien a été touché !!!")
+            print("Wizard is hit !!!")
             return lp_wizard - self.atk_pt
         else:
-            print("L'attaque à échoué !!")
+            print("Attack failed !!")
             return lp_wizard
     def dragonDefense(self , attack_wizard):
         if random.randint(1,6) > 4:
-            print("Le dragon se défend")
+            print("Dragon defends")
             return self.def_pt - attack_wizard
         else:
-            print("Le dragon est touché !!")
+            print("Dragon is hit!!")
 
             return attack_wizard
     def dragonDodge(self , wizard_atk):
-        print("Le dragon essaye d'esquivé")
+        print("Dragon try to dodge")
         if random.randint(1,6) > 4 and self.dodge_pt > 0:
             print("Le dragon à esquivé")
             self.dodge_pt -= 50
             return 0
         else:
-            print("Le dragon n'a pas esquivé")
+            print("Dodge failde !!")
             return wizard_atk
     def dragonChoice(self):
         return str(random.randint(1,3))
