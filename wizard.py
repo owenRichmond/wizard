@@ -9,35 +9,35 @@ class Wizard:
         self.dodge_pt = dodge_pt
         self.potion = potion
     def wizardAttack(self, lp_dragon):
-        print("Attaque du sorcier")
+        print("Wizard's attack")
         return lp_dragon - self.atk_pt
     def wizardDefense(self , attack_dragon):
         if random.randint(1,6) > 4:
-            print("Vous vous défender")
+            print("Defend yourself !!")
             return self.def_pt - attack_dragon
         else:
-            print("Vous êtes touché !!")
+            print("Outch you take it !!")
             return attack_dragon
 
     def wizardDodge(self, attack_dragon):
         if random.randint(1, 6) > 4 and self.dodge_pt > 0:
-            print("Vous esquiver")
+            print("You dodge it")
             self.dodge_pt -= 100
         else:
-            print("L'equive a échoué !!")
+            print("Dodge failed !!")
             return attack_dragon
     def takePotion(self):
         if self.potion > 0:
             print("------------>")
-            print("Prendre une potion")
+            print("Take potion")
             print("------------>")
             self.life_pt += 500
             self.potion -= 1
         else:
-            print("Vous n'avez plus de potion")
+            print("You have no more potions")
     def launchSpell(self):
         print("------------>")
-        print("Lancer un sort")
+        print("Launch fates")
         print("------------>")
         self.atk_pt += 1000
         self.mana_pt -= 100

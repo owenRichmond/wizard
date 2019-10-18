@@ -29,7 +29,7 @@ class Dragon:
             self.dodge_pt -= 50
             return 0
         else:
-            print("Dodge failde !!")
+            print("Dodge failed !!")
             return wizard_atk
     def dragonChoice(self):
         return str(random.randint(1,3))
